@@ -1,0 +1,13 @@
+{
+  "run_id": "e0b4b11f-5422-48a8-80ad-4d97f3dbb666",
+  "generated_at": "2026-05-26T07:25:23.016746+00:00",
+  "jobs_scraped": 10,
+  "jobs_after_exclusion": 9,
+  "companies_checked": 3,
+  "companies_fit": 1,
+  "contacts_validated": 0,
+  "contacts_kept": 0,
+  "ai_ark_credits_used": 0,
+  "active_client_hiring_signals": 1,
+  "status": "success"
+}
