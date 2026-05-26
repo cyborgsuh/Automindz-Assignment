@@ -1,0 +1,20 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+.DS_Store
+
+# Generated artifacts (commit run_summary.json after a successful run for submission)
+output/*
+!output/.gitkeep
+!output/run_summary.json
+!output/active_client_hiring.csv
+!output/icp_fit_decisions.csv

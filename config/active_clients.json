@@ -1,0 +1,22 @@
+{
+  "clients": [
+    "Pfizer",
+    "Bayer",
+    "Novartis",
+    "Roche",
+    "Sanofi",
+    "GSK (GlaxoSmithKline)",
+    "AstraZeneca",
+    "Merck KGaA",
+    "Boehringer Ingelheim",
+    "BioNTech",
+    "CureVac",
+    "MorphoSys",
+    "Evotec",
+    "ICON plc",
+    "IQVIA"
+  ],
+  "aliases": {
+    "GSK (GlaxoSmithKline)": ["GSK", "GlaxoSmithKline", "Glaxo Smith Kline"]
+  }
+}
