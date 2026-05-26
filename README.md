@@ -1,6 +1,6 @@
 # PharmaTalent Europe — Lead Discovery Pipeline
 
-**Time spent:** ~4 hours
+**Time spent:** ~7 hours
 
 Weekly lead-discovery pipeline for PharmaTalent Europe: scrape biotech/pharma jobs from LinkedIn, exclude active clients, ICP-fit companies via OpenRouter web research, find decision-makers via AI Ark, validate hiring managers via OpenRouter, persist to Supabase.
 
