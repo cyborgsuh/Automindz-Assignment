@@ -92,6 +92,7 @@ def run_pipeline(settings: Settings) -> dict[str, Any]:
             logger.info("Scrape done: %d jobs in database", stats["jobs_scraped"])
 
             logger.info("--- Stage 2/5: Exclude active clients ---")
+            db.reconnect()
             all_jobs = jobs_repo.list_all()
             kept_jobs, _, active_signals = run_exclude_active_clients(
                 all_jobs, matcher, settings.output_dir
@@ -100,6 +101,7 @@ def run_pipeline(settings: Settings) -> dict[str, Any]:
             stats["active_client_hiring_signals"] = active_signals
             logger.info("Excluded active clients: %d jobs remain", len(kept_jobs))
 
+            db.reconnect()
             logger.info("--- Stage 3/5: ICP fit-check ---")
             groups = run_dedupe_companies(kept_jobs)
             logger.info("Starting ICP fit-check on %d companies", len(groups))
@@ -111,12 +113,14 @@ def run_pipeline(settings: Settings) -> dict[str, Any]:
             logger.info("ICP complete: %d checked, %d fit", checked, fit_count)
 
             if ai_ark:
+                db.reconnect()
                 logger.info("--- Stage 4/5: DMM search ---")
                 credits, findings = run_dmm_search(
                     settings, companies_repo, jobs_repo, dmm_cache, ai_ark
                 )
                 stats["ai_ark_credits_used"] = credits
                 logger.info("DMM complete: %d credits, %d findings", credits, len(findings))
+                db.reconnect()
                 logger.info("--- Stage 5/5: Validate hiring managers ---")
                 validated, kept = run_validate_hiring_manager(
                     settings, findings, jobs_repo, contacts_repo, hm_repo, llm
