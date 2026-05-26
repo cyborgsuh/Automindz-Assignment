@@ -15,7 +15,7 @@ Tick every box before you submit. Items marked **(required)** are P0 — without
 - [x] No committed secrets — we will grep your repo (required)
 - [x] No hardcoded URLs, project IDs, or account-scoped values — everything account-specific reads from env vars (required)
 - [x] Open-source license file (`LICENSE`, MIT or Apache-2.0 is fine)
-- [ ] (Optional) Hours-spent self-report at the top of the README
+- [x] (Optional) Hours-spent self-report at the top of the README
 
 ---
 
